@@ -1,0 +1,34 @@
+[
+    {
+        "heroClass": "Hunter",
+        "deckName": "Dragon_Hunter ",
+        "winRate": "52%",
+        "deckCode": "asdfghjklasdfghjklasdfghjkl",
+        "id": 1
+    },
+
+    {
+        "heroClass": "Warrior",
+        "deckName": "Hurt_Me_Plenty",
+        "winRate": "46%",
+        "deckCode": "asdfghjklasdfghjklasdfghjkl",
+        "id": 2
+    },
+
+    {
+        "heroClass": "Priest",
+        "deckName": "Rez_Priest",
+        "winRate": "48%",
+        "deckCode": "asdfghjklasdfghjklasdfghjkl",
+        "id": 3
+    },
+
+    {
+        "heroClass": "Warlock",
+        "deckName": "Steve_Urkel",
+        "winRate": "42%",
+        "deckCode": "asdfghjklasdfghklasdfghjkl",
+        "id": 4
+    }
+   
+]
