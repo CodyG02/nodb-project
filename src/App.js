@@ -3,26 +3,51 @@ import History from './components/History'
 import DeckLog from './components/DeckLog'
 import Header from './components/Header'
 import './App.css';
+import axios from 'axios';
 
 class App extends Component{
   constructor(){
     super()
 
     this.state = {
-      deckList: []
+      yourDecks: []
     }
     this.newDeck = this.newDeck.bind(this)
     this.updateDeck = this.updateDeck.bind(this)
     this.deleteDeck = this.deleteDeck.bind(this)
   }
 
-  componentDidMount(){}
+  componentDidMount(){
+    axios.get('/api/decks').then(res => {
+      this.setState({
+        yourDecks: res.data
+      })
+    })
+  }
 
-  newDeck(decks){}
+  newDeck(decks){
+    axios.post('/api/decks', decks).then(res => {
+      this.setState({
+        yourDecks: res.data
+      })
+    })
+  }
 
-  updateDeck(id, changeDeck){}
+  updateDeck(id, changeDeck){
+    axios.put(`/api/decks/${id}`, { changeDeck}).then(res =>{
+      this.setState({
+        yourDecks: res.data
+      })
+    })
+  }
 
-  deleteDeck(id){}
+  deleteDeck(id){
+    axios.delete(`/api/decks/${id}`).then(res =>{
+      this.setState({
+        yourDecks: res.data
+      })
+    })
+  }
 
 
 
@@ -30,9 +55,15 @@ class App extends Component{
     return(
       <div>
         <Header/>
-        App.js
-        <History/>
-        <DeckLog/>
+        
+        <History
+         newDeck={this.newDeck}
+         />
+        <DeckLog 
+        yourDecks= {this.state.yourDecks}
+        updateDeck={this.updateDeck}
+        deleteDeck={this.deleteDeck}
+        />
       </div>
     )
   }

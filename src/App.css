@@ -3,3 +3,29 @@
 .App {
   text-align: center;
 }
+
+.header{
+  text-align: center;
+  color: purple;
+  font-size: 100px;
+}
+
+.welcome-text{
+  text-align: center;
+  color: blue;
+  font-size: 50px;
+}
+
+@media ( max-width: 600px){
+  .header{
+    text-align: center;
+    color: orange;
+    font-size: 50px;
+  }
+
+  .welcome-text{
+    text-align: center;
+    color: red;
+    font-size: 25px;
+  }
+}

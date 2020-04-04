@@ -1,11 +1,21 @@
 import React from 'react'
 import Decks from './Decks'
 
-function DeckLog(){
+function DeckLog(props){
+    const deckList = props.yourDecks.map(decks => {
+        return (
+            <Decks
+            decks={decks}
+            updateDeck={props.updateDeck}
+            deleteDeck ={props.deleteDeck}
+            />
+        )
+    })
     return(
         <div>
-            DeckLog.js
-            <Decks/>
+           
+            {deckList}
+        
         </div>
     )
 }
