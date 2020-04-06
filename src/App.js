@@ -25,19 +25,30 @@ class App extends Component{
     })
   }
 
-  newDeck(decks){
-    axios.post('/api/decks', decks).then(res => {
+  newDeck(addDeck){
+    console.log(addDeck)
+    axios.post('/api/decks', addDeck).then(res => {
+     const mapDeck = res.data.map(deck => {
+       console.log(deck)
+       return deck
+     })
+     
+    // console.log('response' + mapDeck)
       this.setState({
-        yourDecks: res.data
+        yourDecks: mapDeck
       })
     })
   }
 
   updateDeck(id, changeDeck){
-    axios.put(`/api/decks/${id}`, { changeDeck}).then(res =>{
+    console.log('update deck ' + changeDeck)
+    axios.put(`/api/decks/${id}`,  changeDeck).then(res =>{
       this.setState({
+        //  this.yourDecks = this.userInput
         yourDecks: res.data
       })
+      console.log(res.data)
+      console.log('update deckers ' + this.state)
     })
   }
 
@@ -57,6 +68,7 @@ class App extends Component{
         <Header/>
         
         <History
+        yourDecks={this.state.yourDecks}
          newDeck={this.newDeck}
          />
         <DeckLog 

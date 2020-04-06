@@ -7,7 +7,12 @@ class Decks extends Component{
         this.state ={
             
             editing: false,
-            userInput: ''
+            
+                heroClass: '',
+                deckName: '',
+                winRate: '',
+                deckCode: ''
+            
         }
         this.toggleEdit = this.toggleEdit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -22,13 +27,26 @@ class Decks extends Component{
     }
 
     handleChange(event){
+        console.log('handle changes')
         this.setState({
-            userInput: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
     handleSaveChanges(){
-        this.props.updateDeck(this.props.decks.id, this.state.userInput)
+        const heroClass= this.state.heroClass
+        const deckName= this.state.deckName
+        const winRate= this.state.winRate
+        const deckCode= this.state.deckCode
+        const userInput = {updatedInfo:{
+            'heroClass': heroClass,
+            'deckName': deckName,
+            'winRate': winRate,
+            'deckCode': deckCode
+        }}
+        // console.log('WTF ' + this.state.userInput)
+        console.log(userInput)
+        this.props.updateDeck(this.props.decks.id, userInput)
         this.toggleEdit()
     }
 
@@ -39,10 +57,10 @@ class Decks extends Component{
             <div>
                 {this.state.editing ?
                 <div>
-                    <input onChange={this.handleChange} />
-                    <input onChange={this.handleChange}/>
-                    <input onChange={this.handleChange}/>
-                    <input onChange={this.handleChange} />
+                    <input name='heroClass' onChange={event =>this.handleChange(event)} />
+                    <input name='deckName' onChange={event =>this.handleChange(event)}/>
+                    <input name='winRate'onChange={event =>this.handleChange(event)}/>
+                    <input name='deckCode' onChange={event =>this.handleChange(event)} />
                     <button onClick={this.toggleEdit}>cancel</button>
                     <button onClick={this.handleSaveChanges}>update</button>
                 </div> 
@@ -52,7 +70,7 @@ class Decks extends Component{
                     </div>
                 }
                 
-                <button on onClick={() => this.props.deleteDeck(this.props.deck.id)}> delete deck</button>
+                <button onClick={() => this.props.deleteDeck(this.props.decks.id)}> delete deck</button>
 
                
             </div>

@@ -8,9 +8,10 @@ module.exports = {
     },
 
     newDeck: (req, res) => {
-        const {newDeck} = req.body
+        const {addDeck} = req.body
+        console.log(req.body)
         const addedDeck = {
-            ...newDeck,
+            ...addDeck,
             id
         }
 
