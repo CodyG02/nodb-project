@@ -54,23 +54,27 @@ class Decks extends Component{
         // const {heroClass, deckName, winRate, deckCode} = req.body
         // const {id} = req.params
         return(
-            <div>
+            <div className='hero-boxes'>
                 {this.state.editing ?
-                <div>
-                    <input name='heroClass' onChange={event =>this.handleChange(event)} />
-                    <input name='deckName' onChange={event =>this.handleChange(event)}/>
-                    <input name='winRate'onChange={event =>this.handleChange(event)}/>
-                    <input name='deckCode' onChange={event =>this.handleChange(event)} />
-                    <button onClick={this.toggleEdit}>cancel</button>
-                    <button onClick={this.handleSaveChanges}>update</button>
+                <div className='intial-display'>
+                    <input className='box' name='heroClass' onChange={event =>this.handleChange(event)} placeholder='Class' />
+                    <input className='box' name='deckName' onChange={event =>this.handleChange(event)} placeholder='Deck Name'/>
+                    <input className='box' name='winRate'onChange={event =>this.handleChange(event)} placeholder='Win Rate'/>
+                    <input className='box' name='deckCode' onChange={event =>this.handleChange(event)} placeholder='Deck Code'/>
+                    <button className='button' onClick={this.toggleEdit}>Cancel</button>
+                    <button className='button' onClick={this.handleSaveChanges}>Update</button>
                 </div> 
                 : 
-                    <div onDoubleClick={this.toggleEdit}>
-                         {`${this.props.decks.heroClass}, ${this.props.decks.deckName}, ${this.props.decks.winRate}, ${this.props.decks.deckCode}`}
+                    <div className='parent-display' onDoubleClick={this.toggleEdit}>
+                        <p className='display-box'>{this.props.decks.heroClass}</p>
+                        <p className='display-box'>{this.props.decks.deckName}</p>
+                        <p className='display-box'>{this.props.decks.winRate}</p>
+                        <p className='display-box'>{this.props.decks.deckCode}</p>
+                         
                     </div>
                 }
                 
-                <button onClick={() => this.props.deleteDeck(this.props.decks.id)}> delete deck</button>
+                <button className='delete-button' onClick={() => this.props.deleteDeck(this.props.decks.id)}> Delete Deck</button>
 
                
             </div>

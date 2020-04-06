@@ -41,7 +41,7 @@ class App extends Component{
   }
 
   updateDeck(id, changeDeck){
-    console.log('update deck ' + changeDeck)
+    console.log(changeDeck)
     axios.put(`/api/decks/${id}`,  changeDeck).then(res =>{
       this.setState({
         //  this.yourDecks = this.userInput
@@ -64,7 +64,7 @@ class App extends Component{
 
   render(){
     return(
-      <div>
+      <div className='App'>
         <Header/>
         
         <History

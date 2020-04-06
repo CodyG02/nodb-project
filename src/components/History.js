@@ -66,16 +66,16 @@ class History extends Component{
         <div className='history'>
                 {this.state.addingDeck ?
                 <div>
-                    <input type='text' name='heroClass' onChange={this.handleChange} placeholder='Class'></input>
-                    <input type='text' name='deckName'onChange={this.handleChange} placeholder='Deck Name'></input>
-                    <input type='text'name='winRate'onChange={this.handleChange} placeholder='Win Rate'></input>
-                    <input type='text'name='deckCode'onChange={this.handleChange} placeholder='Deck Code'></input>
-                    <button onClick={this.toggleAdd}>cancel</button>
-                    <button onClick={this.handleSaveNew}>Add</button>
+                    <input className='add-box' type='text' name='heroClass' onChange={this.handleChange} placeholder='Class'></input>
+                    <input className='add-box' type='text' name='deckName'onChange={this.handleChange} placeholder='Deck Name'></input>
+                    <input className='add-box' type='text'name='winRate'onChange={this.handleChange} placeholder='Win Rate'></input>
+                    <input className='add-box' type='text'name='deckCode'onChange={this.handleChange} placeholder='Deck Code'></input>
+                    <button className='button' onClick={this.toggleAdd}>cancel</button>
+                    <button className='button' onClick={this.handleSaveNew}>Add</button>
                 </div> 
                 : 
                  <div>
-                    <button onClick={this.toggleAdd}>Add Deck</button>
+                    <button className='add-button' onClick={this.toggleAdd}>Add Deck</button>
                 </div>
                 }
 

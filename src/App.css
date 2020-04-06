@@ -2,30 +2,101 @@
 
 .App {
   text-align: center;
+  background-image: url('https://cdn1.dotesports.com/wp-content/uploads/2018/12/20123709/Hearthstone_Box1.jpg');
+ background-size: cover;
+ height: 100vh;
+ width: 100vw;
 }
 
 .header{
   text-align: center;
-  color: purple;
+  color: peru;
   font-size: 100px;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-shadow: 5px 5px 6px #000000, 0 0 10px black;
+  
+  
+  
 }
 
 .welcome-text{
   text-align: center;
-  color: blue;
+  color: mediumslateblue;
   font-size: 50px;
 }
 
-@media ( max-width: 600px){
-  .header{
-    text-align: center;
-    color: orange;
-    font-size: 50px;
-  }
+.deck-list{
+  background-color: white;
+  height: 100px;
+  width: 350px
 
-  .welcome-text{
-    text-align: center;
-    color: red;
-    font-size: 25px;
-  }
+}
+
+.parent-display{
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-between;
+  width: 900px;
+}
+
+.display-box{
+  background-color: rgb(39,43,55);
+  border: 1px solid black;
+  width:300px;
+  color: rgb(240,200,124)
+}
+
+.hero-boxes{
+ display:flex;
+ justify-content: center;
+ padding-top: 60px;
+ background-color: rgba(128, 128, 128, 0.603);
+ /* height: 15px;
+/* text-align: center;
+width: 800px;  */
+
+}
+ 
+.box{
+background-color: lightblue;
+}
+
+.button{
+ background-color: palegoldenrod;
+ color: midnightblue;
+ font-weight: 750;
+ box-shadow: 2px 2px 5px 2px #000000;
+}
+
+.delete-button{
+  background-color: midnightblue;
+  color: palegoldenrod;
+  font-weight: 700;
+  box-shadow: 2px 2px 5px 2px #000000;
+}
+
+.history{
+  background-color: rgba(176, 224, 230, 0.315);
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 500px; */
+  margin-top: 50px;
+  
+}
+
+.add-button{
+  background-color:rgb(244,194,66);
+  height: 45px;
+  font-size: 30px;
+  color:rgb(65,0,163);
+  font-weight: 700;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.add-box{
+  background-color: lightblue;
 }

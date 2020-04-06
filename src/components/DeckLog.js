@@ -13,7 +13,7 @@ function DeckLog(props){
         )
     })
     return(
-        <div>
+        <div classname='deck-list'>
            
             {deckList}
         
